@@ -1,9 +1,0 @@
-body { font-family: Arial, sans-serif; margin:0; padding:0; }
-header { background:#005baa; color:white; padding:1rem; text-align:center; }
-header h1 { margin:0; font-size:1.5rem; }
-nav a { margin:0 10px; color:white; text-decoration:none; font-weight:bold; }
-main { padding:1rem; }
-table { width:100%; border-collapse:collapse; margin-top:1rem; }
-th, td { border:1px solid #ccc; padding:8px; text-align:left; }
-button { margin:5px; padding:8px 12px; background:#005baa; color:white; border:none; cursor:pointer; }
-button:hover { background:#004080; }
