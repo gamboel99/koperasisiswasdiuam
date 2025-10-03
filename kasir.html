@@ -1,34 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kasir - Koperasi SDI Ulumiyah Al-Makruf</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header>
-    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="admin.html">Admin</a>
-      <a href="laporan.html">Laporan</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Kasir - Input Transaksi</h2>
-    <form id="form-transaksi">
-      <select id="produk"></select>
-      <input type="number" id="jumlah" placeholder="Jumlah" required>
-      <input type="text" id="kasir" placeholder="Nama Kasir" required>
-      <button type="submit">Simpan Transaksi</button>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kasir - Koperasi</title>
+<link rel="stylesheet" href="assets/css/style.css"></head>
+<body class="page-kasir">
+<header class="topbar">
+  <div class="left"><img src="assets/img/logo.png" class="logo-sm"><span class="title">Kasir</span></div>
+  <div class="right"><button id="btnLogout2" class="btn ghost">Logout</button></div>
+</header>
+<main class="container">
+  <section class="card">
+    <h2>Transaksi Baru</h2>
+    <form id="form-jual" class="form-inline">
+      <select id="f_produk"></select>
+      <input id="f_qty" type="number" min="1" value="1" required>
+      <input id="f_kasir" placeholder="Nama Kasir" required>
+      <div class="row">
+        <button class="btn primary" id="btnAdd">Tambah & Simpan</button>
+        <button class="btn" id="btnClearCart" type="button">Batal</button>
+      </div>
     </form>
-    <h2>Transaksi Hari Ini</h2>
-    <table id="tabel-transaksi">
-      <thead><tr><th>Tanggal</th><th>Kode</th><th>Nama</th><th>Jumlah</th><th>Total</th><th>Kasir</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </main>
+    <div class="card">
+      <h3>Keranjang</h3>
+      <div id="cartWrap" class="table-wrap"></div>
+      <div class="row between"><strong>Total: Rp <span id="grandTotal">0</span></strong><button class="btn primary" id="btnCheckout">Cetak Nota & Simpan</button></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>Penjualan Hari Ini</h3>
+    <div id="salesToday" class="table-wrap"></div>
+    <div class="row">
+      <button class="btn" id="btnExportSalesDoc">Export Penjualan (Word)</button>
+      <button class="btn" id="btnExportSalesXls">Export Penjualan (Excel)</button>
+    </div>
+  </section>
+</main>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

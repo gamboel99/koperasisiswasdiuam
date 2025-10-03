@@ -1,23 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Koperasi SDI Ulumiyah Al-Makruf</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koperasi SDI Ulumiyah Al-Makruf</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header>
-    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
-    <nav>
-      <a href="admin.html">Admin</a>
-      <a href="kasir.html">Kasir</a>
-      <a href="laporan.html">Laporan</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Selamat datang</h2>
-    <p>Pilih menu di atas untuk mengelola koperasi sekolah.</p>
+<body class="page-login">
+  <main class="container card login-card">
+    <img src="assets/img/logo.png" alt="logo" class="logo">
+    <h1 class="brand">Koperasi <span>SDI Ulumiyah Al-Makruf</span></h1>
+    <p class="muted">Silakan masuk sebagai Admin atau Kasir</p>
+
+    <form id="loginForm" class="form">
+      <label>Role</label>
+      <div class="segmented">
+        <button type="button" class="seg-btn active" data-role="admin">Admin</button>
+        <button type="button" class="seg-btn" data-role="kasir">Kasir</button>
+      </div>
+      <label>Username</label>
+      <input id="username" placeholder="masukkan username" required>
+      <label>Password</label>
+      <input id="password" type="password" placeholder="masukkan password" required>
+      <div class="row">
+        <button class="btn primary" id="btnLogin">Masuk</button>
+        <button class="btn ghost" id="btnDemo" type="button">Coba Demo</button>
+      </div>
+      <p class="muted small">Admin default: <strong>admin/admin123</strong> — Kasir default: <strong>kasir/kasir123</strong></p>
+    </form>
+
+    <footer class="foot small muted">Aplikasi Koperasi Sekolah — responsive & mobile friendly</footer>
   </main>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

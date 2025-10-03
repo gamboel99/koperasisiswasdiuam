@@ -1,27 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laporan - Koperasi SDI Ulumiyah Al-Makruf</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Laporan - Koperasi</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
-  <header>
-    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="admin.html">Admin</a>
-      <a href="kasir.html">Kasir</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Laporan</h2>
-    <button onclick="exportWord('stok')">Export Laporan Stok (Word)</button>
-    <button onclick="exportExcel('stok')">Export Laporan Stok (Excel)</button><br><br>
-    <button onclick="exportWord('penjualan')">Export Laporan Penjualan (Word)</button>
-    <button onclick="exportExcel('penjualan')">Export Laporan Penjualan (Excel)</button>
-  </main>
+<header class="topbar">
+  <div class="left"><img src="assets/img/logo.png" class="logo-sm"><span class="title">Laporan</span></div>
+  <div class="right"><a href="index.html" class="btn ghost">Home</a></div>
+</header>
+<main class="container">
+  <h2>Laporan & Export</h2>
+  <p>Gunakan halaman Admin/Kasir untuk membuat data. Di sini hanya viewer & export.</p>
+</main>
 </body>
 </html>

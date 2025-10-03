@@ -1,36 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Koperasi SDI Ulumiyah Al-Makruf</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin - Koperasi SDI Al-Makruf</title>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-  <header>
-    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="kasir.html">Kasir</a>
-      <a href="laporan.html">Laporan</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Input Produk</h2>
-    <form id="form-produk">
-      <input type="text" id="kode" placeholder="Kode Barang" required>
-      <input type="text" id="nama" placeholder="Nama Barang" required>
-      <input type="number" id="hkulak" placeholder="Harga Kulak" required>
-      <input type="number" id="hjual" placeholder="Harga Jual" required>
-      <input type="number" id="stok" placeholder="Stok" required>
-      <button type="submit">Simpan Produk</button>
+<body class="page-admin">
+<header class="topbar">
+  <div class="left"><img src="assets/img/logo.png" class="logo-sm"><span class="title">Dashboard Admin</span></div>
+  <div class="right"><button id="btnLogout" class="btn ghost">Logout</button></div>
+</header>
+<nav class="tabbar">
+  <button class="tab active" data-tab="produk">Input Produk</button>
+  <button class="tab" data-tab="stok">Stok & Opname</button>
+  <button class="tab" data-tab="laporan">Laporan</button>
+  <button class="tab" data-tab="verif">Verifikasi</button>
+  <button class="tab" data-tab="import">Import/Export</button>
+</nav>
+<main class="container">
+  <section id="tab-produk" class="panel">
+    <h2>Input Produk Baru</h2>
+    <form id="form-produk" class="form-inline card">
+      <input id="p_kode" placeholder="Kode barang" required>
+      <input id="p_nama" placeholder="Nama barang" required>
+      <input id="p_kulak" type="number" placeholder="Harga Kulak (Rp)" required>
+      <input id="p_jual" type="number" placeholder="Harga Jual (Rp)" required>
+      <input id="p_stok" type="number" placeholder="Stok awal" required>
+      <div class="row">
+        <button class="btn primary" id="btnSaveProd">Simpan</button>
+        <button class="btn ghost" id="btnClearProd" type="button">Bersihkan</button>
+      </div>
     </form>
-    <h2>Daftar Produk</h2>
-    <table id="tabel-produk">
-      <thead><tr><th>Kode</th><th>Nama</th><th>Harga Kulak</th><th>Harga Jual</th><th>Stok</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </main>
+    <div class="card">
+      <h3>Daftar Produk</h3>
+      <div id="produkList" class="table-wrap">Memuat produk...</div>
+    </div>
+  </section>
+
+  <section id="tab-stok" class="panel hidden">
+    <h2>Stok & Stok Opname</h2>
+    <div class="card">
+      <button class="btn" id="btnOpname">Mulai Stok Opname (Update stok)</button>
+      <div id="stokList" class="table-wrap"></div>
+    </div>
+  </section>
+
+  <section id="tab-laporan" class="panel hidden">
+    <h2>Laporan</h2>
+    <label>Pilih jenis laporan</label>
+    <select id="lapType">
+      <option value="penjualan">Laporan Penjualan</option>
+      <option value="stok">Laporan Stok</option>
+    </select>
+    <div class="row">
+      <input type="date" id="from"> s/d <input type="date" id="to">
+      <button class="btn" id="btnRun">Tampilkan</button>
+    </div>
+    <div id="lapArea" class="card table-wrap"></div>
+    <div class="row">
+      <button class="btn primary" id="btnExportDoc">Export Word (.doc)</button>
+      <button class="btn" id="btnExportXls">Export Excel (.xls)</button>
+    </div>
+  </section>
+
+  <section id="tab-verif" class="panel hidden">
+    <h2>Verifikasi Laporan</h2>
+    <p>Daftar laporan yang belum diverifikasi</p>
+    <div id="verifList" class="table-wrap card"></div>
+  </section>
+
+  <section id="tab-import" class="panel hidden">
+    <h2>Import / Export Data</h2>
+    <div class="card">
+      <label>Export semua data (produk + transaksi)</label>
+      <div class="row">
+        <button class="btn" id="btnExportAll">Export JSON</button>
+        <button class="btn primary" id="btnExportDocAll">Export Semua ke Word</button>
+      </div>
+      <hr>
+      <label>Import file JSON (backup)</label>
+      <input type="file" id="fileImport" accept=".json">
+      <button class="btn" id="btnImport">Mulai Import</button>
+      <p class="muted small">Import akan menimpa data saat ini. Simpan backup terlebih dahulu.</p>
+    </div>
+  </section>
+</main>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
