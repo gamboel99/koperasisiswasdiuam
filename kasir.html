@@ -2,26 +2,47 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kasir - Koperasi SDI Al-Makruf</title>
+  <title>Kasir - SDI Ulumiyah Al Makruf</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/kasir.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="assets/img/logo.png" class="logo-small">
-    <h1>Dashboard Kasir</h1>
+    <h1>Kasir SDI Ulumiyah Al Makruf</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html">Admin</a>
+      <a href="kasir.html" class="active">Kasir</a>
+    </nav>
   </header>
-  <nav>
-    <ul>
-      <li><a href="#" onclick="loadPage('transaksi')">Input Penjualan</a></li>
-      <li><a href="#" onclick="loadPage('laporan')">Laporan</a></li>
-      <li><a href="index.html">Logout</a></li>
-    </ul>
-  </nav>
+
   <main id="content">
-    <h2>Selamat datang, Kasir</h2>
-    <p>Pilih menu untuk mulai.</p>
+    <h2>Transaksi Penjualan</h2>
+    <form id="jualForm">
+      <label>Pilih Barang:</label><br>
+      <select id="barangSelect" required></select><br>
+
+      <label>Jumlah Beli:</label><br>
+      <input type="number" id="jumlah" min="1" required><br>
+
+      <label>Harga Jual:</label><br>
+      <input type="number" id="harga" readonly><br>
+
+      <label>Total Harga:</label><br>
+      <input type="number" id="total" readonly><br>
+
+      <button type="submit">Simpan Transaksi</button>
+    </form>
+
+    <h2>Laporan Penjualan</h2>
+    <table border="1" width="100%" id="laporanTable">
+      <thead>
+        <tr>
+          <th>Tanggal</th><th>Barang</th><th>Jumlah</th><th>Harga</th><th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </main>
-  <script src="assets/js/kasir.js"></script>
 </body>
 </html>
