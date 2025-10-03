@@ -70,7 +70,7 @@ function loadPage(page) {
   if (page === 'laporan') {
     content.innerHTML = `
       <h2>Laporan Penjualan</h2>
-      <p>(nanti ambil data transaksi dari Google Sheet)</p>
+      <p>https://script.google.com/macros/s/AKfycbxiddwkJJ_qUX3OryOKzO1vknJSqp2KJMv1VaqXf-casL2D0sbNlbzmhdXJKmXPTTRl/exec;</p>
     `;
   }
 }
