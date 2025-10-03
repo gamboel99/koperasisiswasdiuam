@@ -1,4 +1,4 @@
-const API_URL = https://script.google.com/macros/s/AKfycbxiddwkJJ_qUX3OryOKzO1vknJSqp2KJMv1VaqXf-casL2D0sbNlbzmhdXJKmXPTTRl/exec;
+const API_URL = https://script.google.com/macros/s/AKfycbzOX-BHSVKUeUnCXu-4hmlNdwphVl0porf5TIENy1xce33AJvHZKYHRAUXpgds0hZKY/exec;
 
 // Load produk ke dropdown
 fetch(API_URL + "?action=getProduk")
