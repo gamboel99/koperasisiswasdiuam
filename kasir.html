@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir - Koperasi SDI Ulumiyah Al-Makruf</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html">Admin</a>
+      <a href="laporan.html">Laporan</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Kasir - Input Transaksi</h2>
+    <form id="form-transaksi">
+      <select id="produk"></select>
+      <input type="number" id="jumlah" placeholder="Jumlah" required>
+      <input type="text" id="kasir" placeholder="Nama Kasir" required>
+      <button type="submit">Simpan Transaksi</button>
+    </form>
+    <h2>Transaksi Hari Ini</h2>
+    <table id="tabel-transaksi">
+      <thead><tr><th>Tanggal</th><th>Kode</th><th>Nama</th><th>Jumlah</th><th>Total</th><th>Kasir</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+</body>
+</html>

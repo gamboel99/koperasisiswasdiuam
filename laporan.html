@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan - Koperasi SDI Ulumiyah Al-Makruf</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Koperasi SDI Ulumiyah Al-Makruf</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html">Admin</a>
+      <a href="kasir.html">Kasir</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Laporan</h2>
+    <button onclick="exportWord('stok')">Export Laporan Stok (Word)</button>
+    <button onclick="exportExcel('stok')">Export Laporan Stok (Excel)</button><br><br>
+    <button onclick="exportWord('penjualan')">Export Laporan Penjualan (Word)</button>
+    <button onclick="exportExcel('penjualan')">Export Laporan Penjualan (Excel)</button>
+  </main>
+</body>
+</html>
