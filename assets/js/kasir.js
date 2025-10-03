@@ -1,4 +1,4 @@
-const API_URL = "YOUR_SCRIPT_URL_HERE"; // ganti dengan Apps Script
+const API_URL = https://script.google.com/macros/s/AKfycbxiddwkJJ_qUX3OryOKzO1vknJSqp2KJMv1VaqXf-casL2D0sbNlbzmhdXJKmXPTTRl/exec;
 
 // Load produk ke dropdown
 fetch(API_URL + "?action=getProduk")
